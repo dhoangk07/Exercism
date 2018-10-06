@@ -12,6 +12,13 @@
                 <div class='exercise-content ml-3'>
                   <h5 class="card-title my-0 "><%=element.title.truncate(20, separator: ' ') %></h5> 
                   <p class="exercise-difficulty <%=element.difficulty%>"><%=element.difficulty %></p>
+                  <div class="exercise-topics">
+                    <% if @tags.present? %>
+                      <% element.tags.each do |tag| %>
+                        <p class="topic"><%=tag.name %></p>
+                      <% end %>
+                    <% end %>
+                  </div>
                 </div>
               </div>
             </div>

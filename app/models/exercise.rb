@@ -1,9 +1,12 @@
 class Exercise < ApplicationRecord
   has_many :solutions
   mount_uploader :avatar, AvatarUploader
+  has_many :taggings
+  has_many :tags, through: :taggings
   enum difficulty: [:easy, :medium, :hard]
   def self.tagged_with(name)
     Tag.find_by!(name: name).events
+    Tag.find_by!(name: name).exercises
   end
 
   def self.tag_counts

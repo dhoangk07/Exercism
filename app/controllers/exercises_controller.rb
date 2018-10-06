@@ -6,6 +6,7 @@ before_action :set_exercise, only: %i[edit update show destroy]
     else
       @exercises = Exercise.all
     end
+    @tags = Tag.all
   end
 
   def new
