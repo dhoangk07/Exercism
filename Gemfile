@@ -14,6 +14,7 @@ gem 'bootsnap'           , '>= 1.1.0', require: false
 gem 'bootstrap'          , '~> 4.1', '>= 4.1.3'
 gem 'jquery-rails'
 gem 'carrierwave'        , '~> 1.2', '>= 1.2.3'
+gem 'paperclip'          , '~> 6.1'
 gem 'acts-as-taggable-on', '~> 6.0'
 gem 'font-awesome-rails' , '~> 4.7', '>= 4.7.0.4'
 gem 'simple_form'        , '~> 4.0', '>= 4.0.1'
