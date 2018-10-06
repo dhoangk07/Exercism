@@ -1,3 +1,16 @@
 // Place all the styles related to the exercises controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.exercise-difficulty {
+  font-style: italic;
+}
+.icon{
+    background: #009cab;
+    border-color: #009cab;
+    width: 48px;
+    height: 48px;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center center;
+  } 
