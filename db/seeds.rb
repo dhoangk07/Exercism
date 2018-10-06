@@ -5,3 +5,33 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+#==> create user
+# 10.times do |n|
+#   name = Faker::FunnyName.two_word_name
+#   email = Faker::Internet.email
+#   User.create!(name: name, email: email)  
+# end
+
+#==> create exercise
+90.times do |n|
+  title = Faker::Lorem.sentences(2)
+  Exercise.create!(title: title)
+end
+
+#==> create solution
+# users = User.all
+# 90.times do |m|
+#   content = Faker::Lorem.sentences(5)
+#   users.each{ |user| user.solutions.create!(content: content)}
+# end
+
+
+
+
+
+
+
+
+
+
