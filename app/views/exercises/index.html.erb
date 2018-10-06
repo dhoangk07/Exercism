@@ -11,7 +11,7 @@
                 </div>
                 <div class='exercise-content ml-3'>
                   <h5 class="card-title my-0 "><%=element.title.truncate(20, separator: ' ') %></h5> 
-                  <p class="exercise-difficulty <%=element.difficulty%>"><%=element.difficulty %></p>
+                  <p class="exercise-difficulty my-2 <%=element.difficulty%>"><%=element.difficulty %></p>
                   <div class="exercise-topics">
                     <% if @tags.present? %>
                       <% element.tags.each do |tag| %>
@@ -28,12 +28,10 @@
     <% end %>
   </div>
 </div>
-
 <!-- <#% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %> -->
   <!-- <#%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %> -->
 <!-- <#% end %> -->
 
 <style type="text/css">
-
-
+  
 </style>
