@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Exercise.delete_all
 #==> create user
 # 10.times do |n|
 #   name = Faker::FunnyName.two_word_name
@@ -15,10 +15,10 @@
 
 #==> create exercise
 90.times do |n|
-  title = Faker::Lorem.sentences(2)
-  Exercise.create!(title: title)
+  title = Faker::Food.dish 
+  difficulty = Exercise.difficulties.keys.sample
+  Exercise.create!(title: title, difficulty: difficulty)
 end
-
 #==> create solution
 # users = User.all
 # 90.times do |m|
