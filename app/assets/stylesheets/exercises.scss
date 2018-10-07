@@ -53,19 +53,30 @@
   }
 
   .exercise-topics{
-    overflow: hidden;
-    white-space: nowrap;
+    overflow     : hidden;
+    white-space  : nowrap;
     text-overflow: ellipsis;
-    height: 21px;
+    height       : 21px;
   }
   .topic{
-    font-size: 11px;
-    line-height: 11px;
-    display: inline-block;
-    font-weight: 400;
-    background: #eee;
-    color: #999;
-    padding: 3px 6px 4px;
+    font-size    : 11px;
+    line-height  : 11px;
+    display      : inline-block;
+    font-weight  : 400;
+    background   : #eee;
+    color        : #999;
+    padding      : 3px 6px 4px;
+    border-radius: 2px;
+  }
+  .get-started{
+    background   : #fafffe;
+    border       : 1px solid #3ab292;
+    padding      : 20px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+  .tab-content{
+    border       : 1px solid #ddd;
     border-radius: 2px;
   }
 
