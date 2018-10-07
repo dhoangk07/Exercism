@@ -15,8 +15,14 @@
         <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab"> <p class="px-3"><%=@exercise.introduction %></p> </div>
         <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">...</div>
         <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
-          <%= @solution.content %>
-          </div>
+          <% if @solution.present? %>
+            <pre class="line-numbers">
+              <code class="language-ruby" >
+                <%= @solution.content %>
+              </code>
+            </pre>
+          <% end %>
+        </div>
       </div>
     </div>
 
@@ -31,6 +37,8 @@
   </div>
 </div>
 
+<script type="text/javascript">
+</script>
 <style type="text/css">
   
 </style>
