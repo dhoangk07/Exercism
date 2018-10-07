@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
-  has_many :solutions
+  has_many :solutions, dependent: :destroy
   has_many :taggings
   has_many :tags, through: :taggings
   # mount_uploader :avatar, AvatarUploader

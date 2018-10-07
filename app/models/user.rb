@@ -3,7 +3,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-  has_many :solutions
+  has_many :solutions, dependent: :destroy
   has_attached_file :avatar,
     :styles   => {
       :medium => "200x200",
