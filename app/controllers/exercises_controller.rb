@@ -30,7 +30,7 @@ before_action :set_exercise, only: %i[edit update show destroy]
   end
 
   def show
-    @solution = Solution.where(user_id: current_user.id, exercise_id: @exercise.id)
+    @solution = Solution.where(user_id: current_user.id, exercise_id: @exercise.id).first
   end
 
   def destroy
