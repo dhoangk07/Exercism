@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-7">
+      <div class="text-success">
+        <h2><%=@exercise.title %></h2> 
+      </div>
+      <div class="text-default">
+        <%=@exercise.introduction %>
+      </div>
+    </div>
+
+    <div class="col-5">
+      <div class="float-right">
+        <div class="get-started">
+          <h4>Get started</h4>
+          <p>We've created a step-by-step set of instructions to help you quickly install Exercism and get started, so you can start learning.</p>
+          <button type="button" class="btn btn-primary btn-block">Start walk-through</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style type="text/css">
+  .get-started{
+    background: #fafffe;
+    border: 1px solid #3ab292;
+    padding: 20px;
+    border-radius: 2px;
+    margin-bottom: 20px;
+  }
+</style>
