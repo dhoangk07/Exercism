@@ -14,7 +14,7 @@
         <div class="get-started">
           <h4>Get started</h4>
           <p>We've created a step-by-step set of instructions to help you quickly install Exercism and get started, so you can start learning.</p>
-          <button type="button" class="btn btn-primary btn-block">Start walk-through</button>
+          <%=link_to "Start walk-through", solutions_path(exercise_id: @exercise.id), class: "btn btn-primary btn-block btn-sm", method: :post%>
         </div>
       </div>
     </div>
