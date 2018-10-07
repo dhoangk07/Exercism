@@ -17,7 +17,8 @@ Exercise.delete_all
 90.times do |n|
   title = Faker::Food.dish 
   difficulty = Exercise.difficulties.keys.sample
-  Exercise.create!(title: title, difficulty: difficulty)
+  introduction = Faker::Lorem.paragraph(500)
+  Exercise.create!(title: title, difficulty: difficulty, introduction: introduction)
 end
 #==> create solution
 # users = User.all
