@@ -10,9 +10,17 @@ before_action :set_exercise, only: %i[edit update show destroy]
   end
 
   def new
+    @exercise = Exercise.new
   end
 
   def create
+    @exercise = Exercise.new(exercise_params)
+    if @exercise.save
+      redirect_to exercises_path
+    else
+      flash.now[:error] = @exercise.errors.full_messages.join(", ")
+      render :new
+    end
   end 
 
   def edit
