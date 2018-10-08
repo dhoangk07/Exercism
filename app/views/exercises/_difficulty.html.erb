@@ -1,0 +1,17 @@
+<div class="col-4">
+  <div class="col-auto">
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger">Difficulty:</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Difficulty:</span>
+      </button>
+      <div class="dropdown-menu">
+        <%= link_to 'All', exercises_path, class: "dropdown-item"%>
+        <%= link_to 'Easy', exercises_path(filter: 'easy'), class: "dropdown-item"%>
+        <%= link_to 'Medium', exercises_path(filter: 'medium'), class: "dropdown-item"%>
+        <%= link_to 'Hard', exercises_path(filter: 'hard'), class: "dropdown-item"%>
+      </div>
+    </div>
+  </div>
+</div>
+

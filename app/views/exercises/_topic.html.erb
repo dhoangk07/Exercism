@@ -1,0 +1,17 @@
+<div class="col-4">
+  <div class="col-auto">
+    <div class="btn-group">
+      <button type="button" class="btn btn-danger">Topic:</button>
+      <button type="button" class="btn btn-danger dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <span class="sr-only">Topic:</span>
+      </button>
+      <div class="dropdown-menu">
+        <%= link_to "Any", exercises_path, class: "dropdown-item"%>
+        <% @tags.each do |element| %>
+          <%= link_to "#{element.name}", exercises_path(tag: "#{element.name}"), class: "dropdown-item"%>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
+

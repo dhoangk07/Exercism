@@ -1,63 +1,8 @@
 <div class="container">
   <div class="row">
-      <div class="col-4">
-        <div class="col-auto">
-          <select class="custom-select my-1 mr-sm-2" id="inlineFormCustomSelectPref">
-            <option selected>Choose...</option>
-            <option value="1">One</option>
-            <option value="2">Two</option>
-            <option value="3">Three</option>
-          </select>
-
-          <div class="input-group mb-2">
-            <div class="input-group-prepend">
-              <div class="input-group-text">Difficulty</div>
-            </div>
-            <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Username">
-          </div>
-        </div>
-      </div>
+    <%= render 'difficulty' %>
+    <%= render 'topic' %>
+    <%= render 'status' %>
+    <%= render 'display_exercises', exercise: @exercise %>
   </div>
 </div>
- 
-
-<div class="container">
-  <div class="row">
-
-    <% @exercises.each do |element| %>
-      <div class="col-4 px-2">
-        <div class="card-deck py-2 px-0">
-          <div class="card">
-            <%= link_to exercise_path(element) do %>
-              <div class="card-body">
-                <div class='row ml-3 mt-2' data-title="<%=element.title%>">
-                  <div class="icon">
-                    <%= image_tag("hello-world-white.png", alt: "Card image cap", class: "image")%>
-                  </div>
-                  <div class='exercise-content ml-3'>
-                    <h5 class="card-title my-0 "><%=element.title.truncate(20, separator: ' ') %></h5> 
-                    <p class="exercise-difficulty my-2 <%=element.difficulty%>"><%=element.difficulty %></p>
-                    <div class="exercise-topics">
-                      <% if @tags.present? %>
-                        <% element.tags.each do |tag| %>
-                          <p class="topic"><%=tag.name %></p>
-                        <% end %>
-                      <% end %>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            <% end %>
-          </div>
-        </div>
-      </div>
-    <% end %>
-  </div>
-</div>
-<!-- <#% tag_cloud(@tags, %w(css1 css2 css3 css4)) do |tag, css_class| %> -->
-  <!-- <#%= link_to tag.name, { :action => :tag, :id => tag.name }, :class => css_class %> -->
-<!-- <#% end %> -->
-
-<style type="text/css">
-  
-</style>
