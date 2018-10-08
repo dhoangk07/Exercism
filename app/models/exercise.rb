@@ -6,6 +6,21 @@ class Exercise < ApplicationRecord
   enum difficulty: [:easy, :medium, :hard]
   validates :difficulty, presence: true
 
+  # def self.query_depend_on_difficulty(difficulty)
+  #   Exercise.where(difficulty: difficulty)
+  # end
+
+  def self.query_depend_on_status(status, user)
+    exercise_ids = Solution.where(status: status, user_id: user.id).pluck(:exercise_id)
+    self.where(id: exercise_ids)
+  end
+
+  def self.query_depend_on_tag(tag)
+    tag_ids = Tag.where(name: tag).pluck(:id)
+    tagging_ids = Tagging.where(id: tag_ids).pluck(:exercise_id)
+    self.where(id: tagging_ids)
+  end
+
   def self.tagged_with(name)
     Tag.find_by!(name: name).exercises
   end
