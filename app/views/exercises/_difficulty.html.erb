@@ -6,10 +6,10 @@
         <span class="sr-only">Difficulty:</span>
       </button>
       <div class="dropdown-menu">
-        <%= link_to 'All', exercises_path, class: "dropdown-item"%>
-        <%= link_to 'Easy', exercises_path(filter: 'easy'), class: "dropdown-item"%>
-        <%= link_to 'Medium', exercises_path(filter: 'medium'), class: "dropdown-item"%>
-        <%= link_to 'Hard', exercises_path(filter: 'hard'), class: "dropdown-item"%>
+        <%= link_to 'All',    exercises_path, class: "dropdown-item"%>
+        <%= link_to 'Easy',   generate_exercise_path(difficulty: 'easy'), class: "dropdown-item"%>
+        <%= link_to 'Medium', generate_exercise_path(difficulty: 'medium'), class: "dropdown-item"%>
+        <%= link_to 'Hard',   generate_exercise_path(difficulty: 'hard'), class: "dropdown-item"%>
       </div>
     </div>
   </div>

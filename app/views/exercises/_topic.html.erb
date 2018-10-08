@@ -8,7 +8,7 @@
       <div class="dropdown-menu">
         <%= link_to "Any", exercises_path, class: "dropdown-item"%>
         <% @tags.each do |element| %>
-          <%= link_to "#{element.name}", exercises_path(tag: "#{element.name}"), class: "dropdown-item"%>
+          <%= link_to element.name, generate_exercise_path(tag: "#{element.name}"), class: "dropdown-item"%>
         <% end %>
       </div>
     </div>

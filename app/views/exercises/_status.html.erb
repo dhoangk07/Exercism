@@ -7,9 +7,9 @@
       </button>
       <div class="dropdown-menu">
         <%= link_to 'All', exercises_path, class: "dropdown-item"%>
-        <%= link_to 'In progress', exercises_path(filter: 'in_progress'), class: "dropdown-item"%>
-        <%= link_to 'Lock', exercises_path(filter: 'lock'), class: "dropdown-item"%>
-        <%= link_to 'Completed', exercises_path(filter: 'completed'), class: "dropdown-item"%>
+        <%= link_to 'In progress', generate_exercise_path(status: Solution.statuses[:in_progress]), class: "dropdown-item"%>
+        <%= link_to 'Lock',        generate_exercise_path(status: Solution.statuses[:locked]),      class: "dropdown-item"%>
+        <%= link_to 'Completed',   generate_exercise_path(status: Solution.statuses[:completed]),   class: "dropdown-item"%>
       </div>
     </div>
   </div>
