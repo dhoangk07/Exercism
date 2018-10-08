@@ -15,14 +15,15 @@ before_action :set_exercise, only: %i[edit update show destroy]
     elsif params[:filter] == 'hard'
       @exercises= Exercise.where(difficulty: 'hard')
     #status
+        # debugger
     elsif params[:filter] == 'lock'
-      exercise_ids = Solution.where(status: 'lock').where(user_id: current_user.id).pluck(:exercise_id)
+      exercise_ids = Solution.where(status: Solution.statuses[:locked]).where(user_id: current_user.id).pluck(:exercise_id)
       @exercises = Exercise.where(id: exercise_ids)
     elsif params[:filter] == 'in_progress'
-      exercise_ids = Solution.where(status: 'in_progress').where(user_id: current_user.id).pluck(:exercise_id)
+      exercise_ids = Solution.where(status: Solution.statuses[:in_progress]).where(user_id: current_user.id).pluck(:exercise_id)
       @exercises = Exercise.where(id: exercise_ids)
     elsif params[:filter] == 'completed'
-      exercise_ids = Solution.where(status: 'completed').where(user_id: current_user.id).pluck(:exercise_id)
+      exercise_ids = Solution.where(status: Solution.statuses[:completed]).where(user_id: current_user.id).pluck(:exercise_id)
       @exercises = Exercise.where(id: exercise_ids)
     else
       @exercises = Exercise.all
