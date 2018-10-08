@@ -6,6 +6,7 @@ class Exercise < ApplicationRecord
   enum difficulty: [:easy, :medium, :hard]
   validates :difficulty, presence: true
 
+  scope :by_difficulty, -> (difficulty) { where(difficulty: difficulty) }
   # def self.query_depend_on_difficulty(difficulty)
   #   Exercise.where(difficulty: difficulty)
   # end
