@@ -18,8 +18,8 @@ class Exercise < ApplicationRecord
 
   def self.query_depend_on_tag(tag)
     tag_ids = Tag.where(name: tag).pluck(:id)
-    tagging_ids = Tagging.where(id: tag_ids).pluck(:exercise_id)
-    self.where(id: tagging_ids)
+    exercise_ids = Tagging.where(tag_id: tag_ids).pluck(:exercise_id)
+    self.where(id: exercise_ids)
   end
 
   def self.tagged_with(name)
