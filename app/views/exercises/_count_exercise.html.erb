@@ -1,13 +1,3 @@
 <div class="col-3">
-  <div class="col-auto">
-    <div class="btn-group">
-      <% if @exercises.present? %>
-        <% if @exercises.count == 1 || @exercises.count == 0%>
-          <p class="text-success"><%= @exercises.count %> Exercise</p>
-        <% else %>
-          <p class="text-success"><%= @exercises.count %> Exercises</p>
-        <% end %>
-      <% end %>
-    </div>
-  </div>
+  <p class="text-success"> <%= @exercises.count > 0 ? " #{@exercises.count} Exercises" : "#{@exercises.count} Exercise" %></p>
 </div>
